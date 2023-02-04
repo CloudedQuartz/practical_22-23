@@ -1,5 +1,4 @@
 import pickle
-from traceback import print_tb
 
 numEntries = int(input("Enter the number of new entries : "))
 hotelData = []
