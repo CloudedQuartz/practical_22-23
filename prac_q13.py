@@ -13,4 +13,4 @@ def AreEqual(str1, str2):
 inp1 = input("First string : ")
 inp2 = input("Second string : ")
 
-print(AreEqual(inp1,inp2))
+print("Equal :", AreEqual(inp1,inp2))
