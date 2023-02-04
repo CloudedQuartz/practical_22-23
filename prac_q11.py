@@ -15,8 +15,8 @@ def reshape(mat, r, c):
 			for j in range(c):
 				matNew[i].append(matTemp[k])
 				k += 1
-	for i in matNew:
-		print(i)
+	print(matNew)
+
 matSizeOrig = input("Original matrix size as 'm x n' : ").replace(" ", "").replace("X", "x").split("x")
 
 matOrig = []
