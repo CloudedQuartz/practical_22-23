@@ -1,7 +1,7 @@
 import mysql.connector
 
-MYSQLUSR = ''
-MYSQLPASS = ''
+MYSQLUSR = 'root'
+MYSQLPASS = 'passwd'
 mydb = mysql.connector.connect(host="localhost", user=MYSQLUSR, passwd=MYSQLPASS)
 cursorObject = mydb.cursor()
 cursorObject.execute("use mydb")
@@ -20,7 +20,7 @@ def addrecords():
 
 
 def showrec():
-	Query = "SELECT * FROM item"
+	Query = "SELECT * FROM ITEM"
 	cursorObject.execute(Query)
 	records = cursorObject.fetchall()
 	for row in records:
@@ -28,7 +28,7 @@ def showrec():
 
 
 def search():
-	Q = "SELECT * FROM item WHERE Itemcode = %s"
+	Q = "SELECT * FROM ITEM WHERE Itemcode = %s"
 	s = input("Enter the item code: ")
 	val = (s,)
 	cursorObject.execute(Q, val)
@@ -36,10 +36,7 @@ def search():
 	for rows in f:
 		print(rows)
 while True:
-	l = input(""" A: Add a record
-	B: Show all records
-	C: Search a record by itemcode
-	""")
+	l = input("A: Add a record\nB: Show all records\nC: Search a record by itemcode\nChoice : ")
 	match l.lower():
 		case 'a':
 			addrecords()
